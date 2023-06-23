@@ -1,0 +1,41 @@
+.expense-item {
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  background-color: burlywood;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border-radius: 12px;
+  color: brown;
+  font-size: 1rem;
+  min-width: 40em;
+}
+
+.expense-item__description {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1rem;
+  color: black;
+  width: 100%;
+}
+
+/* Justify content both vertically and horizontally */
+/* https://stackoverflow.com/questions/19026884/flexbox-center-horizontally-and-vertically */
+.expense-item__price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  border-radius: 20px;
+  border: 0px solid black;
+  padding: 5px;
+  width: 90px;
+  height: 30px;
+  background-color: sienna;
+  color: aliceblue;
+  font-family: 'Courier New', Courier, monospace;
+}
