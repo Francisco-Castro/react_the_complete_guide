@@ -1,11 +1,9 @@
 .expense-item {
   display: flex;
   align-items: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   background-color: burlywood;
   padding: 1.5rem;
   margin: 1rem 0;
-  border-radius: 12px;
   color: brown;
   font-size: 1rem;
   min-width: 40em;
@@ -29,7 +27,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   border-radius: 20px;
   border: 0px solid black;
   padding: 5px;

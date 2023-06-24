@@ -1,6 +1,5 @@
 .expenses {
     padding: 20px;
-    border-radius: 15px;
-    border: 1px solid brown;
+    border: 1px solid transparent;
     background-color: sienna;
 }
