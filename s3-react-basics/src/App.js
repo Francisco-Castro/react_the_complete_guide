@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Expenses from "./components/Expenses";
+import Expenses from "./components/Expenses/Expenses";
 
 const expenses = [
   { id: 1, date: new Date(2021, 2, 28), title: "Car Insurance", amount: 222.5 },
