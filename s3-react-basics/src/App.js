@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 const expenses = [
   { id: 1, date: new Date(2021, 2, 28), title: "Car Insurance", amount: 222.5 },
@@ -9,24 +10,25 @@ const expenses = [
 ];
 
 function App() {
-  // Without JSX we use React.createElement in a nested structure
-  // createElement/3 - Args: [Element, Object, Content]
-  return React.createElement(
-    "div",
-    { className: "App" },
-    React.createElement(
-      "header",
-      { className: "App-header" },
-      React.createElement(Expenses, {expenses: expenses})
-    )
+  return (
+    <div className="App">
+      <header className="App-header">
+        <NewExpense />
+        <Expenses expenses={expenses} />
+      </header>
+    </div>
   );
 
-  // return (
-  //   <div className="App">
-  //     <header className="App-header">
-  //       <Expenses expenses={expenses}/>
-  //     </header>
-  //   </div>
+  // Without JSX we use React.createElement in a nested structure
+  // createElement/3 - Args: [Element, Object, Content]
+  // return React.createElement(
+  //   "div",
+  //   { className: "App" },
+  //   React.createElement(
+  //     "header",
+  //     { className: "App-header" },
+  //     React.createElement(Expenses, {expenses: expenses})
+  //   )
   // );
 }
 
