@@ -1,5 +1,5 @@
 import "./ExpenseItem.css";
-import ExpenseDate from "./ExpenseDate";
+import ExpenseDate from "../ExpenseDate/ExpenseDate";
 import Card from "../UI/Card";
 
 function ExpenseItem({ title, date, amount }) {
