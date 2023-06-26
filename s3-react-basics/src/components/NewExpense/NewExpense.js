@@ -2,10 +2,16 @@ import ExpenseForm from "../ExpenseForm/ExpenseForm";
 import Card from "../UI/Card";
 import "./NewExpense.css";
 
-const NewExpense = () => {
+const NewExpense = (props) => {
+  const enteredExpenseDataHandler = (expenseData) => {
+    const result = { ...expenseData, id: Math.random().toString() };
+    return props.onSaveExpenseData(result);
+  };
+  
+
   return (
     <Card className="new-expense">
-      <ExpenseForm />
+      <ExpenseForm onSaveExpenseData={enteredExpenseDataHandler} />
     </Card>
   );
 };
