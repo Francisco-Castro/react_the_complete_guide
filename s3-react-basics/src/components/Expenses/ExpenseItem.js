@@ -3,8 +3,6 @@ import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/Card";
 
 function ExpenseItem({ title, date, amount }) {
-
-
   return (
     <Card className="expense-item">
       <div>
