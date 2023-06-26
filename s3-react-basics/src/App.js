@@ -12,14 +12,17 @@ const hardcodedExpenses = [
 function App() {
   const [expenses, setExpenses] = useState(hardcodedExpenses);
 
-  const enteredExpenseDataHandler = (expenseData) => {
-    setExpenses(expenses.push(expenseData));
+  const addExpenseHandler = (expenseData) => {
+    // setExpenses([expenseData, ...expenses]);
+    setExpenses((prevExpenses) => {
+      return [expenseData, ...prevExpenses];
+    });
   };
 
   return (
     <div className="App">
       <header className="App-header">
-        <NewExpense onSaveExpenseData={enteredExpenseDataHandler} />
+        <NewExpense onSaveExpenseData={addExpenseHandler} />
         <Expenses expenses={expenses} />
       </header>
     </div>
