@@ -19,15 +19,19 @@ const NewExpense = (props) => {
     return props.onSaveExpenseData(result);
   };
 
-  let content = isFormClosed ? (
-    <button onClick={showFormHandler}>Create new expense</button>
-  ) : (
-    <ExpenseForm
-      onSaveExpenseData={enteredExpenseDataHandler}
-      onCancel={cancelForm}
-    />
+  return (
+    <Card className="new-expense">
+      {isFormClosed && (
+        <button onClick={showFormHandler}>Create new expense</button>
+      )}
+      {!isFormClosed && (
+        <ExpenseForm
+          onSaveExpenseData={enteredExpenseDataHandler}
+          onCancel={cancelForm}
+        />
+      )}
+    </Card>
   );
-  return <Card className="new-expense">{content}</Card>;
 };
 
 export default NewExpense;
