@@ -2,8 +2,6 @@ import ExpenseItem from "../ExpenseItem/ExpenseItem";
 import "./ExpensesList.css";
 
 const ExpensesList = ({ expenses }) => {
-  console.log(expenses);
-
   if (expenses.length === 0) {
     return <h2>Expenses not found</h2>;
   }
