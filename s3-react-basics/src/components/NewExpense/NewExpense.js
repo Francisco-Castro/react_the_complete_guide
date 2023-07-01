@@ -10,8 +10,8 @@ const NewExpense = (props) => {
     setIsFormClosed(false);
   };
 
-  const cancelForm = (data) => {
-    setIsFormClosed(data);
+  const cancelForm = () => {
+    setIsFormClosed(true);
   };
 
   const enteredExpenseDataHandler = (expenseData) => {
