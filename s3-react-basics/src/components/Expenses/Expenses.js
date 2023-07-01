@@ -1,35 +1,27 @@
 import { useState } from "react";
-import ExpenseItem from "../ExpenseItem/ExpenseItem";
 import Card from "../UI/Card";
 import ExpensesFilter from "../ExpensesFilter/ExpensesFilter";
 import "./Expenses.css";
+import ExpensesList from "../ExpensesList/ExpensesList";
 
 function Expenses({ expenses }) {
-  const [pickedYear, setPickedYear] = useState("2019");
+  const [year, setYear] = useState("2019");
 
   const dropdownChangeHandler = (selectedYear) => {
-    setPickedYear(selectedYear);
+    setYear(selectedYear);
   };
 
   const filteredExpenses = expenses.filter(
-    (e) => e.date.getFullYear().toString() === pickedYear
+    (e) => e.date.getFullYear().toString() === year
   );
-
-  let expensesContent = <p>No expenses found.</p>;
-
-  if (filteredExpenses.length > 0) {
-    expensesContent = filteredExpenses.map(({ id, title, amount, date }) => {
-      return <ExpenseItem amount={amount} date={date} title={title} key={id} />;
-    });
-  }
 
   return (
     <Card className="expenses">
       <ExpensesFilter
         onChangeYear={dropdownChangeHandler}
-        selectedYear={pickedYear}
+        selectedYear={year}
       />
-      {expensesContent}
+      <ExpensesList expenses={filteredExpenses} />
     </Card>
   );
 }

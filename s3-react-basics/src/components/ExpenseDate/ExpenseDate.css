@@ -1,6 +1,7 @@
 .expense-date {
-    border-radius: 5px;
-    padding: 5px;
-    border: 1px solid brown;
-    width: 70px;
-  }
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 1rem;
+  border: 1px solid brown;
+  width: 70px;
+}
