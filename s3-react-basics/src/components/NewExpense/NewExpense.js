@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ExpenseForm from "../ExpenseForm/ExpenseForm";
+import ExpenseForm from "./ExpenseForm";
 import Card from "../UI/Card";
 import "./NewExpense.css";
 

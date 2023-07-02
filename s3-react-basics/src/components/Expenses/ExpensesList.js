@@ -1,4 +1,4 @@
-import ExpenseItem from "../ExpenseItem/ExpenseItem";
+import ExpenseItem from "./ExpenseItem";
 import "./ExpensesList.css";
 
 const ExpensesList = ({ expenses }) => {
