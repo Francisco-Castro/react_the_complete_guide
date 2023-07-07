@@ -1,0 +1,32 @@
+.bar {
+  height: 100px;
+  width: 10px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.bar__outer {
+  height: 100%;
+  width: 100%;
+  background-color: bisque;
+  border: 1px solid black;
+  border-radius: 15px;
+  position: absolute;
+  bottom: 0;
+}
+
+.bar__inner {
+  height: 100%;
+  width: 100%;
+  bottom: 0;
+  background-color: chocolate;
+  position: absolute;
+  border-radius: 15px;
+  transform: translateX(1px) translateY(-1px);
+  transition: all 0.5s ease-out;
+}
+
+.chartbar-text {
+  margin-top: 10px;
+  color: black;
+}

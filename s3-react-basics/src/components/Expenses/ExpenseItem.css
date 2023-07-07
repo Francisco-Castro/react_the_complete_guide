@@ -2,11 +2,10 @@
   display: flex;
   align-items: center;
   background-color: burlywood;
-  padding: 1.5rem;
+  padding: 1rem 0;
   margin: 1rem 0;
   color: brown;
   font-size: 1rem;
-  min-width: 40em;
 }
 
 .expense-item__description {
@@ -35,5 +34,5 @@
   height: 30px;
   background-color: sienna;
   color: aliceblue;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }

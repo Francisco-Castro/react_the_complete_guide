@@ -1,45 +1,29 @@
 import { useState } from "react";
-import ExpenseItem from "../ExpenseItem/ExpenseItem";
 import Card from "../UI/Card";
-import ExpensesFilter from "../ExpensesFilter/ExpensesFilter";
+import ExpensesFilter from "./ExpensesFilter";
 import "./Expenses.css";
+import ExpensesList from "./ExpensesList";
+import ExpensesChart from "./ExpensesChart";
 
 function Expenses({ expenses }) {
-  const [filterYear, setFilteredYear] = useState("2021");
-
-  // Derived values AKA Computed values
-  let hiddenYears = "2019, 2021 and 2022";
-
-  switch (filterYear) {
-    case "2019":
-      hiddenYears = "2020, 2021 and 2022";
-      break;
-    case "2020":
-      hiddenYears = "2019, 2021 and 2022";
-      break;
-    case "2021":
-      hiddenYears = "2019, 2020 and 2022";
-      break;
-    default:
-      hiddenYears = "2019, 2020 and 2021";
-      break;
-  }
+  const [year, setYear] = useState("2019");
 
   const dropdownChangeHandler = (selectedYear) => {
-    setFilteredYear(selectedYear);
+    setYear(selectedYear);
   };
+
+  const filteredExpenses = expenses.filter(
+    (e) => e.date.getFullYear().toString() === year
+  );
+
   return (
     <Card className="expenses">
       <ExpensesFilter
         onChangeYear={dropdownChangeHandler}
-        selectedYear={filterYear}
+        selectedYear={year}
       />
-      <p>Years {hiddenYears} are hidden</p>
-      {expenses.map(({ id, title, amount, date }) => {
-        return (
-          <ExpenseItem amount={amount} date={date} title={title} key={id} />
-        );
-      })}
+      <ExpensesChart expenses={filteredExpenses} />
+      <ExpensesList expenses={filteredExpenses} />
     </Card>
   );
 }
