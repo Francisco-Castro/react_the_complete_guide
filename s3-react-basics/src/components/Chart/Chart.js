@@ -1,51 +1,21 @@
 import ChartBar from "./ChartBar";
 import "./Chart.css";
-import Card from "../UI/Card";
 
-const Chart = ({ expenses }) => {
-  //   console.log(expenses);
-  const months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-
-  const briefExpenses = expenses.map(({ date, amount }) => {
-    return { month: months[date.getMonth()], amount: amount };
-  });
-
-  var result = briefExpenses.reduce((acc, exp) => {
-    const total = !acc[exp.month] ? exp.amount : acc[exp.month] + exp.amount;
-
-    const res = (acc[exp.month] = total);
-
-    return acc;
-  }, {});
-
-  let arr = Object.values(result);
-  const max = Math.max(...arr);
+const Chart = (props) => {
+  const values = props.dataPoints.map(dp => dp.value)
+  const maxValue = Math.max(...values)
 
   return (
-    <Card className="chart">
-      {months.map((m) => (
-        // <ChartBar month={m} amount={0} key={Math.random()} />
+    <div className="chart">
+      {props.dataPoints.map((dp) => (
         <ChartBar
-          month={m}
-          amount={result[m] || 0}
-          max={max}
-          key={Math.random()}
+          key={dp.label}
+          value={dp.value}
+          maxValue={maxValue}
+          label={dp.label}
         />
       ))}
-    </Card>
+    </div>
   );
 };
 
