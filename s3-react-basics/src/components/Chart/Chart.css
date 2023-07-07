@@ -1,0 +1,16 @@
+/* .chart {
+    display: flex;
+    flex-direction: row;
+} */
+
+.chart {
+  display: inline-grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
+  background-color: burlywood;
+  color: black;
+  margin-top: 10px;
+  box-sizing: border-box;
+  padding: 20px;
+  justify-items: center;
+  grid-auto-columns: auto;
+}

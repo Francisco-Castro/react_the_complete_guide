@@ -3,6 +3,7 @@ import Card from "../UI/Card";
 import ExpensesFilter from "./ExpensesFilter";
 import "./Expenses.css";
 import ExpensesList from "./ExpensesList";
+import Chart from "../Chart/Chart";
 
 function Expenses({ expenses }) {
   const [year, setYear] = useState("2019");
@@ -21,6 +22,7 @@ function Expenses({ expenses }) {
         onChangeYear={dropdownChangeHandler}
         selectedYear={year}
       />
+      <Chart expenses={filteredExpenses} />
       <ExpensesList expenses={filteredExpenses} />
     </Card>
   );
