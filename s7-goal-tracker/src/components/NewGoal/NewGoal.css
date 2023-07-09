@@ -1,0 +1,28 @@
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: baseline;
+  gap: 10px;
+}
+
+button {
+  background-color: black;
+  color: azure;
+  border: 1px solid transparent;
+  padding: 10px 20px;
+}
+
+button:hover {
+  background-color: slategrey;
+  cursor: pointer;
+}
+
+input {
+  width: 20rem;
+}
+
+.new-card {
+  background-color: skyblue;
+  color: black;
+}
