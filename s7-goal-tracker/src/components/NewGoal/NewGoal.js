@@ -1,6 +1,6 @@
 import Card from "../UI/Card";
 import { useState } from "react";
-import "./NewGoal.css";
+import styles from "./NewGoal.module.css";
 
 const NewGoal = (props) => {
   const [goal, setGoal] = useState("");
@@ -25,10 +25,10 @@ const NewGoal = (props) => {
   };
 
   return (
-    <Card className="new-card">
+    <Card className={styles["new-card"]}>
       <form
         onSubmit={submitHandler}
-        className={`form-control ${!isValid && "invalid"}`}
+        className={`${styles["form-control"]} ${!isValid && styles["invalid"]}`}
       >
         <label>Course Goal</label>
         <input onChange={goalChangeHandler} type="text" value={goal}></input>
